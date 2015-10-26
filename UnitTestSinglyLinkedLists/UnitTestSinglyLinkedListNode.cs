@@ -9,7 +9,7 @@ namespace UnitTestSinglyLinkedLists
     [TestClass]
     public class UnitTestSinglyLinkedListNode
     {
-        [TestMethod]
+        [TestMethod]//creates a new SinglyLinkedListNode and store the value
         public void NodeConstructorStoresName()
         {
             SinglyLinkedListNode node = new SinglyLinkedListNode("foo");

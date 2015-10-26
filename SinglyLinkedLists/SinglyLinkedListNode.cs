@@ -11,18 +11,33 @@ namespace SinglyLinkedLists
         // Used by the visualizer.  Do not change.
         public static List<SinglyLinkedListNode> allNodes = new List<SinglyLinkedListNode>();
 
+        /* start example (notes)
+        public string Name { get; set; }
+        Two ways to implement get/set method:
+        1. C# creates (guesses)
+        2. You do it.
+        can do: public string Name { get; protected set; }
+        */
+        
+        
         // READ: http://msdn.microsoft.com/en-us/library/aa287786(v=vs.71).aspx
         private SinglyLinkedListNode next;
+
         public SinglyLinkedListNode Next
         {
-            get { throw new NotImplementedException(); }
-            set { throw new NotImplementedException(); }
+            get { return next; } //could be get { return next; } {} could contain anything that would go inside a method implementation
+            set {
+                if (Next != next)
+                {
+                    next = value;
+                }
+            }
         }
 
         private string value;
         public string Value 
         {
-            get { throw new NotImplementedException(); }
+            get { return value; }
         }
 
         public static bool operator <(SinglyLinkedListNode node1, SinglyLinkedListNode node2)
@@ -39,8 +54,8 @@ namespace SinglyLinkedLists
 
         public SinglyLinkedListNode(string value)
         {
-            throw new NotImplementedException();
 
+            this.value = value; //arguement named value so use this to not have complier be confused
             // Used by the visualizer:
             allNodes.Add(this);
         }
