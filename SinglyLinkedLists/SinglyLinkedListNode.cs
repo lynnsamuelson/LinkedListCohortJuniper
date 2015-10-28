@@ -80,12 +80,23 @@ namespace SinglyLinkedLists
         public bool IsLast()
         {
             //throw new NotImplementedException();
-            if (value == null)
+            if (next == null)
             {
                 return true;
             } else
             {
                 return false;
+            }
+        }
+        public override bool Equals(object obj)
+        {
+            SinglyLinkedListNode node = obj as SinglyLinkedListNode;
+            if (node == null)
+            {
+                return false;
+            } else
+            {
+                return value.Equals(node.value);
             }
         }
     }
