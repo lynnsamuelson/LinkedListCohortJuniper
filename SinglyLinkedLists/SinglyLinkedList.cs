@@ -73,7 +73,7 @@ namespace SinglyLinkedLists
                 return null;
             } else
             {
-                return firstNode.value;          
+                return firstNode.Value;          
             }
         }
 

@@ -43,9 +43,9 @@ namespace SinglyLinkedLists
 
        
         //private static string last;
-        private string Value;
+        private string value;
 
-        public string value 
+        public string Value 
         {
             get { return value; }
         }
@@ -65,7 +65,7 @@ namespace SinglyLinkedLists
         public SinglyLinkedListNode(string value) //this is the constructor
         {
 
-            this.Value = value; //arguement named value so use this to not have complier be confused
+            this.value = value; //arguement named value so use this to not have complier be confused
            
             // Used by the visualizer:
             allNodes.Add(this);
@@ -79,13 +79,14 @@ namespace SinglyLinkedLists
 
         public bool IsLast()
         {
-            throw new NotImplementedException();
-            //if (value == SinglyLinkedListNode.last) {
-            //    return true;
-            //}else
-            //{
-            //    return false;
-            //}
+            //throw new NotImplementedException();
+            if (value == null)
+            {
+                return true;
+            } else
+            {
+                return false;
+            }
         }
     }
 }

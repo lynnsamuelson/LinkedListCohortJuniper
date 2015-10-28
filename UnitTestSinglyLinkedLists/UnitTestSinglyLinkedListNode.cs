@@ -13,7 +13,7 @@ namespace UnitTestSinglyLinkedLists
         public void NodeConstructorStoresName()
         {
             SinglyLinkedListNode node = new SinglyLinkedListNode("foo");
-            Assert.AreEqual("foo", node.value);
+            Assert.AreEqual("foo", node.Value);
         }
 
         [TestMethod]
