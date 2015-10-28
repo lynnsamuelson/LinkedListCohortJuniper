@@ -26,16 +26,26 @@ namespace SinglyLinkedLists
         public SinglyLinkedListNode Next
         {
             get { return next; } //could be get { return next; } {} could contain anything that would go inside a method implementation
-            set {
-                if (Next != next)
+            set
+            {
+                if (this == value)
                 {
-                    next = value;
+                    throw new ArgumentException();
                 }
-            }
+                next = value;
+            }     
+        }
+        public override string ToString()
+        {
+           
+            return value.ToString();         
         }
 
-        private string value;
-        public string Value 
+       
+        //private static string last;
+        private string Value;
+
+        public string value 
         {
             get { return value; }
         }
@@ -52,10 +62,11 @@ namespace SinglyLinkedLists
             return node1.CompareTo(node2) > 0;
         }
 
-        public SinglyLinkedListNode(string value)
+        public SinglyLinkedListNode(string value) //this is the constructor
         {
 
-            this.value = value; //arguement named value so use this to not have complier be confused
+            this.Value = value; //arguement named value so use this to not have complier be confused
+           
             // Used by the visualizer:
             allNodes.Add(this);
         }
@@ -69,6 +80,12 @@ namespace SinglyLinkedLists
         public bool IsLast()
         {
             throw new NotImplementedException();
+            //if (value == SinglyLinkedListNode.last) {
+            //    return true;
+            //}else
+            //{
+            //    return false;
+            //}
         }
     }
 }
