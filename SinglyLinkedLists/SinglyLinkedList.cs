@@ -22,10 +22,12 @@ namespace SinglyLinkedLists
         }
 
         // READ: http://msdn.microsoft.com/en-us/library/6x16t2tx.aspx
+        private SinglyLinkedList[] list = new SinglyLinkedList[100];
+
         public string this[int i]
         {
-            get { throw new NotImplementedException(); }
-            set { throw new NotImplementedException(); }
+            get { return list[i].ToString(); }
+            set { this[i] = value.ToString(); }
         }
 
         public void AddAfter(string existingValue, string value)
@@ -63,7 +65,9 @@ namespace SinglyLinkedLists
 
         public string ElementAt(int index)
         {
-            throw new NotImplementedException();
+            SinglyLinkedList list = new SinglyLinkedList();
+
+            return list[index].ToString();
         }
        
         public string First()

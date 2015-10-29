@@ -101,10 +101,18 @@ namespace UnitTestSinglyLinkedLists
         [TestMethod]
         public void NodeGreaterThan()
         {
-            SinglyLinkedListNode node1 = new SinglyLinkedListNode("foo");
-            SinglyLinkedListNode node2 = new SinglyLinkedListNode("bar");
-           Assert.IsTrue(node1 > node2);
+            SinglyLinkedListNode node1 = new SinglyLinkedListNode("foo");//6
+            SinglyLinkedListNode node2 = new SinglyLinkedListNode("bar");//2
+            Assert.IsTrue(node1 > node2);
         }
+
+        //[TestMethod]
+        //public void NodeCompareToGreaterThan()
+        //{
+        //    SinglyLinkedListNode node1 = new SinglyLinkedListNode("foo");
+        //    SinglyLinkedListNode node2 = new SinglyLinkedListNode("bar");
+        //    Assert.AreEqual(1, node1.CompareTo(node2));
+        //}
 
         [TestMethod]
         public void NodeLesserThan()
@@ -113,6 +121,7 @@ namespace UnitTestSinglyLinkedLists
             SinglyLinkedListNode node2 = new SinglyLinkedListNode("bar");
             Assert.IsTrue(node2 < node1);
         }
+
 
         [TestMethod]
         public void NodeToString()
