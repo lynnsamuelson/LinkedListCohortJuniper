@@ -71,7 +71,6 @@ namespace SinglyLinkedLists
         {
             SinglyLinkedListNode theNode = firstNode;
             
-
             for (int i = 0; i <= index; i++)
             {
                 if (theNode == null)
@@ -86,10 +85,7 @@ namespace SinglyLinkedLists
                 }
                 theNode = theNode.Next;
             }
-                return theNode.ToString();
-               
-            
-            
+                return theNode.ToString();       
         }
        
         public string First()
@@ -126,6 +122,22 @@ namespace SinglyLinkedLists
             {
                 return lastNode.Value.ToString();
             }
+        }
+
+        public override string ToString()
+        {
+            string final = " ";
+            if (firstNode != null)
+            {
+                SinglyLinkedListNode nodes = firstNode;
+                while (!firstNode.IsLast())
+                {
+                    final += "\"" + nodes.Value.ToString() + "\", ";
+                    nodes = nodes.Next;
+                }
+                final += "\"" + nodes.Value.ToString() + "\" ";
+            }
+                return "{" + final + "}";
         }
 
         public void Remove(string value)

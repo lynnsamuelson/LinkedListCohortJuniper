@@ -138,6 +138,14 @@ namespace UnitTestSinglyLinkedLists
         }
 
         [TestMethod]
+        public void ToStringOnSingleItemListTest()
+        {
+            SinglyLinkedList list = new SinglyLinkedList();
+            list.AddLast("foo");
+            Assert.AreEqual("hello", list.ToString());
+        }
+
+        [TestMethod]
         public void ToStringOnMultipleItemList()
         {
             SinglyLinkedList list = new SinglyLinkedList();
