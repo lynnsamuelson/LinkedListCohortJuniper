@@ -22,12 +22,18 @@ namespace SinglyLinkedLists
         }
 
         // READ: http://msdn.microsoft.com/en-us/library/6x16t2tx.aspx
-        private SinglyLinkedList[] list = new SinglyLinkedList[100];
+        private SinglyLinkedList next;
 
         public string this[int i]
         {
-            get { return list[i].ToString(); }
-            set { this[i] = value.ToString(); }
+            get { return next.ToString(); }
+            set {
+                if (this.ToString() == value)
+                {
+                    throw new ArgumentException();
+                }
+                next = this;
+            }
         }
 
         public void AddAfter(string existingValue, string value)
@@ -52,9 +58,7 @@ namespace SinglyLinkedLists
                 lastNode.Next = new SinglyLinkedListNode(value);
                 lastNode = lastNode.Next;
                     //Actually attach new node to the end of the list.
-            }
-                   
-
+            }              
         }
 
         // NOTE: There is more than one way to accomplish this.  One is O(n).  The other is O(1).
@@ -65,9 +69,27 @@ namespace SinglyLinkedLists
 
         public string ElementAt(int index)
         {
-            SinglyLinkedList list = new SinglyLinkedList();
+            SinglyLinkedListNode theNode = firstNode;
+            
 
-            return list[index].ToString();
+            for (int i = 0; i <= index; i++)
+            {
+                if (theNode == null)
+                {
+                    throw new ArgumentOutOfRangeException();
+
+                } else if (i == index)
+                   
+                {
+                    return theNode.ToString();
+                    
+                }
+                theNode = theNode.Next;
+            }
+                return theNode.ToString();
+               
+            
+            
         }
        
         public string First()

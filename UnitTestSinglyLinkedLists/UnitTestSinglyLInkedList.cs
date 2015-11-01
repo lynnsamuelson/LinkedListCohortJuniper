@@ -40,6 +40,14 @@ namespace UnitTestSinglyLinkedLists
         }
 
         [TestMethod]
+        public void ElementAt0OnEmptyListAreEqual()
+        {
+            SinglyLinkedList list = new SinglyLinkedList();
+            list.ElementAt(0);
+            Assert.AreEqual("empty list", list.ElementAt(0));
+        }
+
+        [TestMethod]
         public void ElementAt0()
         {
             SinglyLinkedList list = new SinglyLinkedList();
