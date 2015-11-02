@@ -127,7 +127,6 @@ namespace SinglyLinkedLists
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            string final = " ";
             if (firstNode != null)
             {
                 SinglyLinkedListNode nodes = firstNode;
@@ -157,12 +156,21 @@ namespace SinglyLinkedLists
 
         public string[] ToArray()
         {
-            throw new NotImplementedException();
-            //List<Array> array = new List<Array>();
-            //SinglyLinkedListNode data = firstNode;
+            string builtString = ToString();
+            string[] delimiters = new string[] { "{ \"", "\", \"", "\" }", "{ }" };
+            return builtString.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
 
-            //return array;
-          
+            //SinglyLinkedList list = new SinglyLinkedList();
+            //if (firstNode != null)
+            //{
+            //    SinglyLinkedListNode nodes = firstNode;
+            //    while (nodes.Next != null)
+            //    {
+            //        list.AddLast(nodes.Value);
+            //        nodes = nodes.Next;
+            //    }
+            //}         
+            //return list.ToArray();
         }
     }
 }
