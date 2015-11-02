@@ -126,18 +126,23 @@ namespace SinglyLinkedLists
 
         public override string ToString()
         {
+            StringBuilder sb = new StringBuilder();
             string final = " ";
             if (firstNode != null)
             {
                 SinglyLinkedListNode nodes = firstNode;
-                while (!firstNode.IsLast())
+                while (!nodes.IsLast())
                 {
-                    final += "\"" + nodes.Value.ToString() + "\", ";
+                    sb.Append("\"");
+                    sb.Append(nodes.Value.ToString());
+                    sb.Append("\"");
+                    sb.Append( ", ");
                     nodes = nodes.Next;
                 }
-                final += "\"" + nodes.Value.ToString() + "\" ";
+                sb.Append("\"" + nodes.Value.ToString() + "\" ");
             }
-                return "{" + final + "}";
+            
+            return "{ " + sb + "}";
         }
 
         public void Remove(string value)
@@ -153,6 +158,11 @@ namespace SinglyLinkedLists
         public string[] ToArray()
         {
             throw new NotImplementedException();
+            //List<Array> array = new List<Array>();
+            //SinglyLinkedListNode data = firstNode;
+
+            //return array;
+          
         }
     }
 }
