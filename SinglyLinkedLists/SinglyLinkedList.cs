@@ -255,37 +255,33 @@ namespace SinglyLinkedLists
             }
         }
     
-
         public void Sort()
         {
             if (Count() == 0)
             {
                 return;
-            }
-            while (true)
+            } 
+            SinglyLinkedListNode left = firstNode;
+            SinglyLinkedListNode right = firstNode.Next;
+            bool swapOccurred = false;
+            while (right != null)
             {
-                SinglyLinkedListNode left = firstNode;
-                SinglyLinkedListNode right = firstNode.Next;
-                bool swapOccurred = false;
-                while (right != null)
+                if (left > right)
                 {
-                    if (left > right)
-                    {
-                        //they need to be swapped!
-                        string value = left.Value;
-                        left.Value = right.Value;
-                        right.Value = value;
-                        swapOccurred = true;
-                    }
-                    left = right;
-                    right = left.Next;
+                    //they need to be swapped!
+                    string value = left.Value;
+                    left.Value = right.Value;
+                    right.Value = value;
+                    swapOccurred = true;
                 }
-                if(!swapOccurred)
-                {
-                    return;
-                }
+                left = right;
+                right = left.Next;
             }
-        }
+            if (swapOccurred)
+            {
+                Sort();
+            }
+        }        
 
         public string[] ToArray()
         {
