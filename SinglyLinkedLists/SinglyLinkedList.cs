@@ -180,7 +180,25 @@ namespace SinglyLinkedLists
 
         public bool IsSorted()
         {
-            throw new NotImplementedException();
+            if (Count() == 0)
+            {
+                return true;
+            }
+            SinglyLinkedListNode left = firstNode;
+            SinglyLinkedListNode right = firstNode.Next;
+
+            while (right != null)
+            {
+                if (left > right)
+                {
+                    return false;
+                }
+
+                left = right;
+                right = left.Next;
+            }
+            return true;
+            
         }
 
         // HINT 1: You can extract this functionality (finding the last item in the list) from a method you've already written!
@@ -240,7 +258,33 @@ namespace SinglyLinkedLists
 
         public void Sort()
         {
-            throw new NotImplementedException();
+            if (Count() == 0)
+            {
+                return;
+            }
+            while (true)
+            {
+                SinglyLinkedListNode left = firstNode;
+                SinglyLinkedListNode right = firstNode.Next;
+                bool swapOccurred = false;
+                while (right != null)
+                {
+                    if (left > right)
+                    {
+                        //they need to be swapped!
+                        string value = left.Value;
+                        left.Value = right.Value;
+                        right.Value = value;
+                        swapOccurred = true;
+                    }
+                    left = right;
+                    right = left.Next;
+                }
+                if(!swapOccurred)
+                {
+                    return;
+                }
+            }
         }
 
         public string[] ToArray()
